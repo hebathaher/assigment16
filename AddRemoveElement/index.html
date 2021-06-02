@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add-Remove Element</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <main>
+            <button id="add-element"onclick="add_element()">Add Element</button>
+            <div id="elements">
+                
+            </div>
+        </main>
+        <script>
+            function add_element(){
+    document.getElementById("elements").innerHTML +=` <div class="element">
+            <h3>Element : <input type="text" id="m-text"oninput="myFunction()"></h3>
+     <h4 id="element"style="border:solid grey 1px;">This is an element</h4>
+    <button onclick="deleteElement()">Delete</button></div>`;
+            }
+            
+    function myFunction(){
+         var x = document.getElementById("m-text").value;
+       document.getElementById("element").innerHTML = x;
+    }
+       
+  function deleteElement(){
+      const div = document.querySelector('div .element');
+            div.innerHTML = `<div class="element">
+            <h3>Element : <input type="text" id="m-text"oninput="myFunction()"></h3>
+     <h4 id="element"style="border:solid grey 1px;">This is an element</h4>
+    <button onclick="deleteElement()">Delete</button></div>`;
+   // const mytext = document.getElementById("element");
+      div.remove();
+      
+    
+    }
+        </script>
+    </body>
+</html>
+
+
+  
